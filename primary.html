@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Primary Class Schedule</title>
+  <link rel="icon" type="image/x-icon" href="Images/cropped_circle_image.png">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("Images/background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .overlay-pr {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 0;
+    }
+
+    header {
+      background-color: #2a4ca3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container-pr {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery-pr {
+      border: 1px solid #ccc;
+      width: 180px;
+      background-color: white;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-pr:hover {
+      border: 1px solid #777;
+    }
+
+    .gallery-pr img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-pr:hover img {
+      transform: scale(1.1);
+    }
+
+    .desc {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .popup-pr {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .popup-content-pr {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f44336;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+      margin-top: 40px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #2a4ca3;
+      color: white;
+      font-size: 1em;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #1d3784;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay-pr"></div>
+
+<header>Primary Class</header>
+
+<div class="main">
+  <div class="container-pr">
+    
+
+    <div class="gallery-pr" onclick="openPopup('Images/primary2.png')">
+      <img src="Images/primary2.png" alt="Form 2">
+      <div class="desc">Standard 4</div>
+    </div>
+
+    <div class="gallery-pr" onclick="openPopup('Images/primary3.png')">
+      <img src="Images/primary3.png" alt="Form 3">
+      <div class="desc">Standard 5</div>
+    </div>
+
+    <div class="gallery-pr" onclick="openPopup('Images/primary4.png')">
+      <img src="Images/primary4.png" alt="Form 4">
+      <div class="desc">Standard 6</div>
+    </div>
+
+   
+  </div>
+</div>
+
+<footer>
+  <a href="PTUB_website.html#schedule" class="back-button">← Back</a>
+</footer>
+
+<!-- Popup Box -->
+<div id="popup" class="popup-pr" onclick="closePopup()">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <img class="popup-content-pr" id="popup-img">
+</div>
+
+<script>
+  function openPopup(imageSrc) {
+    document.getElementById("popup-img").src = imageSrc;
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
+
